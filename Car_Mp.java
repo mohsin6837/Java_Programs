@@ -9,7 +9,7 @@ public class Car_Mp {
         return pow;
     }
     public static void main(String[] args) {
-        float pp,dp,ar,mp,P,i,n;
+        float pp,dp,ar,mp,P,n,i;
         System.out.println("Enter the purchase price of the car");
         Scanner sc=new Scanner(System.in);
         pp=sc.nextFloat();
@@ -21,7 +21,8 @@ public class Car_Mp {
         n= sc.nextFloat();
         P=pp-dp;
         i=ar/12;
-        mp=i*P/(1-(1/pow(1+i,n)));
+        float powterm=1/pow(1+i,n);
+        mp=(i*P)/(1-powterm);
         System.out.printf("Monthly payment of car=Rs.%.2f",mp);
     }
 }
